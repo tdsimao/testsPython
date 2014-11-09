@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-from tests.randomTest import *
+from src.tests.randomTest import *
+from src.tests.matrixTest import *
 
 if __name__ == '__main__':
     unittest.main()
