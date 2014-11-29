@@ -7,6 +7,13 @@ from logging import debug
 #import re
 
 
+class MDP:
+    S = []
+    A = []
+    P = []
+    R = []
+    gamma = 0.9
+
 
 def grid():
 	m = createMatrix(3,4, f = zero)
@@ -22,8 +29,8 @@ def main(i = 2,j = 1,k = 2):
 	debug('Some debug')
 	#logging.warning('And this, too')
 	
+	logging.info('\n\n%s\nFinishe Execution', 50*'*')
 	print grid()
-	print 10/0
 
 
 main()
