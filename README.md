@@ -4,4 +4,6 @@
 
 This repository is destinated for implementation of a few tests in Python
 
+I'm also trying to finishe the python challenge
+
 
