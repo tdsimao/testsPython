@@ -1,6 +1,7 @@
-
+from lib.misc import *
+retrieve_file('http://www.pythonchallenge.com/pc/def/ocr.html','data/challenge02.txt')
 f = open('data/challenge02.txt')
-text = f.readlines()
+text = f.readlines()[38:1257]
 d = {}
 for l in text:
     for c in l:

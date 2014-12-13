@@ -1,12 +1,10 @@
+from lib.misc import *
 import os.path
 
 from PIL import Image
 import zipfile, urllib, re
 fileName = 'data/cave.jpg'
-if not os.path.isfile(fileName):
-#if True:
-    url = 'http://www.pythonchallenge.com/pc/return/cave.jpg'
-    file = urllib.urlretrieve(url,fileName)
+retrieve_file('http://www.pythonchallenge.com/pc/return/cave.jpg',fileName)
 im = Image.open(fileName)
 size = im.size
 im_odd = Image.new('RGB',size)
