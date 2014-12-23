@@ -18,8 +18,8 @@ for y in range(h):
 
 import ImageChops
 im_out = ImageChops.difference(im1,im2)
-im_out.show('Teste')
-im_out.save('data/challenge-out_18.jpg')
+#im_out.show('Teste')
+#im_out.save('data/challenge-out_18.jpg')
 
 # first clue
 #http://www.pythonchallenge.com/pc/return/colors.html
@@ -34,7 +34,6 @@ retrieve_file('http://www.pythonchallenge.com/pc/return/deltas.gz',deltas)
 
 lines = gzip.open(deltas,'rb').read().split('\n')
 
-
 pairs = [ (l[:53], l[56:]) for l in lines]
 
 left = [pair[0] for pair in pairs]
@@ -45,6 +44,7 @@ diff = list(difflib.ndiff(left, right))
 import codecs,re
 for c in '-+ ':
     s = ''.join(filter(lambda l: l[0] == c , diff))
+    # remove not hex characters and convert from hex 
     s = codecs.getdecoder('hex')(re.sub('[^0-9a-fA-F]', '', s))[0]
     fileName = 'data/challenge18_%c.png' % c
     f = open(fileName,'wb')
