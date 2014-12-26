@@ -2,6 +2,8 @@ from lib.misc import retrieve_file
 from PIL import Image
 import gzip,difflib
 import base64
+import email
+import mimetools
 
 from email.parser import Parser
 #import email
@@ -22,12 +24,19 @@ headers = Parser().parsestr(mail)
 #print headers['Subject']
 #print 'Content-type:',headers['Content-type']
 
-text = base64.b64decode(att)
+audiodata = base64.b64decode(att)
 
-f = open('data/indian.wav','wb')
-f.write(text)
-f.close()
+input = open('data/indian.dat','wb')
+input.write(att)
+input.close()
+
+input = open('data/indian.dat','rb')
+output = open('data/indian.wav','wb')
+
+#print dir(email.mime.Audio)
+#aux = email.mime.audio.MIMEAudio(audiodata)
 
 #headers = email.parser.Parser().parse(file)
 
-
+exit = ''
+mimetools.decode(input, output, 'base64')
